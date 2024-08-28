@@ -908,7 +908,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["debug", "virtual:c91fcd356d35829ced3f9cafcb7d70217b01982491547be46dbf92a34cc1c6f47f5022ecefa553004a9375335550e06b2a45e10dc96f6aba8aa030dc26a07d30#npm:4.3.2"],\
             ["import-from", "npm:4.0.0"],\
             ["lodash", "npm:4.17.21"],\
-            ["micromatch", "npm:4.0.2"],\
+            ["micromatch", "npm:4.0.8"],\
             ["semantic-release", "npm:19.0.3"]\
           ],\
           "packagePeers": [\
@@ -953,7 +953,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dir-glob", "npm:3.0.1"],\
             ["execa", "npm:5.0.0"],\
             ["lodash", "npm:4.17.21"],\
-            ["micromatch", "npm:4.0.4"],\
+            ["micromatch", "npm:4.0.8"],\
             ["p-reduce", "npm:2.1.0"],\
             ["semantic-release", "npm:19.0.3"]\
           ],\
@@ -1838,11 +1838,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["braces", [\
-        ["npm:3.0.2", {\
-          "packageLocation": "./.yarn/cache/braces-npm-3.0.2-782240b28a-e2a8e769a8.zip/node_modules/braces/",\
+        ["npm:3.0.3", {\
+          "packageLocation": "./.yarn/cache/braces-npm-3.0.3-582c14023c-b95aa0b3bd.zip/node_modules/braces/",\
           "packageDependencies": [\
-            ["braces", "npm:3.0.2"],\
-            ["fill-range", "npm:7.0.1"]\
+            ["braces", "npm:3.0.3"],\
+            ["fill-range", "npm:7.1.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3268,7 +3268,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@nodelib/fs.walk", "npm:1.2.6"],\
             ["glob-parent", "npm:5.1.2"],\
             ["merge2", "npm:1.4.1"],\
-            ["micromatch", "npm:4.0.5"]\
+            ["micromatch", "npm:4.0.8"]\
           ],\
           "linkType": "HARD"\
         }],\
@@ -3280,7 +3280,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@nodelib/fs.walk", "npm:1.2.6"],\
             ["glob-parent", "npm:5.1.2"],\
             ["merge2", "npm:1.4.1"],\
-            ["micromatch", "npm:4.0.2"],\
+            ["micromatch", "npm:4.0.8"],\
             ["picomatch", "npm:2.2.2"]\
           ],\
           "linkType": "HARD"\
@@ -3352,10 +3352,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["fill-range", [\
-        ["npm:7.0.1", {\
-          "packageLocation": "./.yarn/cache/fill-range-npm-7.0.1-b8b1817caa-cc283f4e65.zip/node_modules/fill-range/",\
+        ["npm:7.1.1", {\
+          "packageLocation": "./.yarn/cache/fill-range-npm-7.1.1-bf491486db-b4abfbca38.zip/node_modules/fill-range/",\
           "packageDependencies": [\
-            ["fill-range", "npm:7.0.1"],\
+            ["fill-range", "npm:7.1.1"],\
             ["to-regex-range", "npm:5.0.1"]\
           ],\
           "linkType": "HARD"\
@@ -4802,7 +4802,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["execa", "npm:6.1.0"],\
             ["lilconfig", "npm:2.0.5"],\
             ["listr2", "virtual:5f9010e5ff1626822e95f9478abbca9d06865e771c302ab7261d07ee4d7fe4994efa0046bb5f7982f8af81ec57df4734f10c32785310c1db8be5aaf37cb23c05#npm:4.0.5"],\
-            ["micromatch", "npm:4.0.5"],\
+            ["micromatch", "npm:4.0.8"],\
             ["normalize-path", "npm:3.0.0"],\
             ["object-inspect", "npm:1.12.2"],\
             ["pidtree", "npm:0.6.0"],\
@@ -5120,29 +5120,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["micromatch", [\
-        ["npm:4.0.2", {\
-          "packageLocation": "./.yarn/cache/micromatch-npm-4.0.2-f059c00e51-39590a96d9.zip/node_modules/micromatch/",\
+        ["npm:4.0.8", {\
+          "packageLocation": "./.yarn/cache/micromatch-npm-4.0.8-c9570e4aca-79920eb634.zip/node_modules/micromatch/",\
           "packageDependencies": [\
-            ["micromatch", "npm:4.0.2"],\
-            ["braces", "npm:3.0.2"],\
-            ["picomatch", "npm:2.2.2"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:4.0.4", {\
-          "packageLocation": "./.yarn/cache/micromatch-npm-4.0.4-9fdcbb7a0e-ef3d1c88e7.zip/node_modules/micromatch/",\
-          "packageDependencies": [\
-            ["micromatch", "npm:4.0.4"],\
-            ["braces", "npm:3.0.2"],\
-            ["picomatch", "npm:2.2.3"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:4.0.5", {\
-          "packageLocation": "./.yarn/cache/micromatch-npm-4.0.5-cfab5d7669-02a17b671c.zip/node_modules/micromatch/",\
-          "packageDependencies": [\
-            ["micromatch", "npm:4.0.5"],\
-            ["braces", "npm:3.0.2"],\
+            ["micromatch", "npm:4.0.8"],\
+            ["braces", "npm:3.0.3"],\
             ["picomatch", "npm:2.3.1"]\
           ],\
           "linkType": "HARD"\
@@ -6179,13 +6161,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:2.2.3", {\
-          "packageLocation": "./.yarn/cache/picomatch-npm-2.2.3-3797e21cf0-45e2b882b5.zip/node_modules/picomatch/",\
-          "packageDependencies": [\
-            ["picomatch", "npm:2.2.3"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:2.3.1", {\
           "packageLocation": "./.yarn/cache/picomatch-npm-2.3.1-c782cfd986-050c865ce8.zip/node_modules/picomatch/",\
           "packageDependencies": [\
@@ -6777,7 +6752,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lodash", "npm:4.17.21"],\
             ["marked", "npm:4.0.18"],\
             ["marked-terminal", "virtual:c91fcd356d35829ced3f9cafcb7d70217b01982491547be46dbf92a34cc1c6f47f5022ecefa553004a9375335550e06b2a45e10dc96f6aba8aa030dc26a07d30#npm:5.1.1"],\
-            ["micromatch", "npm:4.0.2"],\
+            ["micromatch", "npm:4.0.8"],\
             ["p-each-series", "npm:2.2.0"],\
             ["p-reduce", "npm:2.1.0"],\
             ["read-pkg-up", "npm:7.0.1"],\

@@ -2,16 +2,16 @@
 
 .idea
 # dependencies
-/node_modules
-/.pnp
+node_modules
+.pnp
 
 # testing
-/coverage
+coverage
 
 # production
-/build
-/dist
-/storybook-static
+build
+dist
+storybook-static
 
 # misc
 .DS_Store

@@ -30,28 +30,28 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "devDependencies": {
-    "@commitlint/cli": "^17.0.3",
-    "@commitlint/config-conventional": "^17.0.3",
-    "@semantic-release/changelog": "^6.0.1",
+    "@commitlint/cli": "^19.4.1",
+    "@commitlint/config-conventional": "^19.4.1",
+    "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^8.0.5",
-    "@types/prop-types": "15.7.5",
-    "@types/react": "^18.0.15",
-    "@typescript-eslint/eslint-plugin": "^5.30.6",
-    "@typescript-eslint/parser": "^5.30.6",
-    "eslint": "^8.19.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-react": "^7.30.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "@semantic-release/github": "^10.1.7",
+    "@types/prop-types": "15.7.12",
+    "@types/react": "^18.3.4",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import-x": "^4.1.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "husky": ">=6",
     "lint-staged": ">=10",
-    "prettier": "2.7.1",
-    "semantic-release": "^19.0.3",
-    "typescript": "4.7.4"
+    "prettier": "3.3.3",
+    "semantic-release": "^24.1.0",
+    "typescript": "5.5.4"
   },
   "peerDependencies": {
-    "react": ">= 17.0 <= 18.2.0"
+    "react": ">= 17.0 <= 18"
   },
   "scripts": {
     "build": "tsc",
@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "prop-types": "15.8.1",
-    "rxjs": "6.6.7"
+    "rxjs": "7.8.1"
   },
   "lint-staged": {
     "./src/**/*.{ts,tsx}": [

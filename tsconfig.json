@@ -18,5 +18,5 @@
     // when they're updated a lot.
     "fallbackPolling": "dynamicPriority"
   },
-  "include": ["src/**/*"]
+  "include": ["./src/**/*"]
 }

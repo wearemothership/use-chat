@@ -3,7 +3,7 @@
 [![Actions Status](https://github.com/chatscope/chat-ui-kit-react/workflows/build/badge.svg)](https://github.com/wearemothership/use-chat/actions) [![npm version](https://img.shields.io/npm/v/@wearemothership/use-chat.svg?style=flat)](https://npmjs.com/@wearemothership/use-chat) [![](https://img.shields.io/npm/l/@wearemothership/use-chat?dummy=unused)](https://github.com/wearemothership/use-chat/blob/main/LICENSE) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 > [!NOTE]
-> This has been forked from [@chatscope/use-chat](https://github.com/wearemothership/use-chat)
+> This has been forked from [@chatscope/use-chat](https://github.com/chatscope/use-chat)
 
 !!! Please do not use version 1.5.0 it has wrong property names !!!
 
@@ -12,13 +12,13 @@ React hook for state management in chat applications.
 Full documentation is not available yet, but **will be prepared**.
 
 If you are interested in this library and need more documentation,
-please let me know by adding one of the positive reactions (+1, Heart, Rocket) in the dedicated issue here:  [https://github.com/wearemothership/use-chat/issues/1](https://github.com/chatscope/use-chat/issues/1)
+please let me know by adding one of the positive reactions (+1, Heart, Rocket) in the dedicated issue here:  [https://github.com/wearemothership/use-chat/issues/1](https://github.com/wearemothership/use-chat/issues/1)
 
 ## What is it?
 
 This is a headless chat library. Think of it as something like a Formik but for chat apps.
 
-The library can be used both with [@wearemothership/chat-ui-kit-react](https://github.com/chatscope/chat-ui-kit-react) as well as with other chat components. 
+The library can be used both with [@wearemothership/chat-ui-kit-react](https://github.com/wearemothership/chat-ui-kit-react) as well as with other chat components. 
 
 The goal of it is to provide a tool for handling features that are most often implemented in chat applications.  
 Primarily it's an application state management as well as some nice addons such as debounce or throttling of sending or receiving typing indicator signaling.
@@ -129,7 +129,7 @@ This description probably looks complicated :). But believe, me it's really simp
 
 This is very simple example, but it shows how easy is it to implement a chat using **useChat** hook.
 
-For more complex example based on CRA please visit [https://github.com/wearemothership/use-chat-example](https://github.com/chatscope/use-chat-example).
+For more complex example based on CRA please visit [https://github.com/wearemothership/use-chat-example](https://github.com/wearemothership/use-chat-example).
 Working example app is available here: [https://use-chat.examples.chatscope.io](https://use-chat.examples.chatscope.io)  
 
 File: index.js

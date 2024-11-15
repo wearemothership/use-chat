@@ -1,6 +1,6 @@
 {
   "name": "@wearemothership/use-chat",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "React hook for state management in chat applications",
   "license": "MIT",
   "homepage": "https://chatscope.io/",
@@ -25,8 +25,8 @@
   ],
   "author": "supersnager <supersnager@gmail.com> (https://chatscope.io)",
   "contributors": [
-	"vespasianvs <andy@wearemothership.com> (https://wearemothership.com)",
-	"kalabro <marshalkina@gmail.com> (https://kalabro.tech/)"
+    "vespasianvs <andy@wearemothership.com> (https://wearemothership.com)",
+    "kalabro <marshalkina@gmail.com> (https://kalabro.tech/)"
   ],
   "repository": {
     "type": "git",

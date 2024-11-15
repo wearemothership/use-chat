@@ -1,6 +1,9 @@
 # Use Chat
 
-[![Actions Status](https://github.com/chatscope/chat-ui-kit-react/workflows/build/badge.svg)](https://github.com/chatscope/use-chat/actions) [![npm version](https://img.shields.io/npm/v/@chatscope/use-chat.svg?style=flat)](https://npmjs.com/@chatscope/use-chat) [![](https://img.shields.io/npm/l/@chatscope/use-chat?dummy=unused)](https://github.com/chatscope/use-chat/blob/main/LICENSE) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![Actions Status](https://github.com/chatscope/chat-ui-kit-react/workflows/build/badge.svg)](https://github.com/wearemothership/use-chat/actions) [![npm version](https://img.shields.io/npm/v/@wearemothership/use-chat.svg?style=flat)](https://npmjs.com/@wearemothership/use-chat) [![](https://img.shields.io/npm/l/@wearemothership/use-chat?dummy=unused)](https://github.com/wearemothership/use-chat/blob/main/LICENSE) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
+> [!NOTE]
+> This has been forked from @chatscope/use-chat
 
 !!! Please do not use version 1.5.0 it has wrong property names !!!
 
@@ -9,13 +12,13 @@ React hook for state management in chat applications.
 Full documentation is not available yet, but **will be prepared**.
 
 If you are interested in this library and need more documentation,
-please let me know by adding one of the positive reactions (+1, Heart, Rocket) in the dedicated issue here:  [https://github.com/chatscope/use-chat/issues/1](https://github.com/chatscope/use-chat/issues/1)
+please let me know by adding one of the positive reactions (+1, Heart, Rocket) in the dedicated issue here:  [https://github.com/wearemothership/use-chat/issues/1](https://github.com/chatscope/use-chat/issues/1)
 
 ## What is it?
 
 This is a headless chat library. Think of it as something like a Formik but for chat apps.
 
-The library can be used both with [@chatscope/chat-ui-kit-react](https://github.com/chatscope/chat-ui-kit-react) as well as with other chat components. 
+The library can be used both with [@wearemothership/chat-ui-kit-react](https://github.com/chatscope/chat-ui-kit-react) as well as with other chat components. 
 
 The goal of it is to provide a tool for handling features that are most often implemented in chat applications.  
 Primarily it's an application state management as well as some nice addons such as debounce or throttling of sending or receiving typing indicator signaling.
@@ -68,13 +71,13 @@ The implementation of a consistent interface also provides the possibility of in
 Using yarn.
 
 ```sh
-yarn add @chatscope/use-chat
+yarn add @wearemothership/use-chat
 ```
 
 Using npm.
 
 ```sh
-npm install @chatscope/use-chat
+npm install @wearemothership/use-chat
 ```
 
 ## Architecture
@@ -101,7 +104,7 @@ This is a point that connects your chat server with the library.
 To use this library, you need to write your own ChatService that implements the IChatService interface.
 The implementation of the service depends on which chat server you are using.
 The content of the service can be your code written from scratch, but the service also can be an encapsulation layer for any ready to use chat communication library   
-There is [src/examples/ExampleChatService.ts](https://github.com/chatscope/use-chat/blob/main/src/examples/ExampleChatService.ts) available for a quick start. This is a good starting point for developing the real service for your application.
+There is [src/examples/ExampleChatService.ts](https://github.com/wearemothership/use-chat/blob/main/src/examples/ExampleChatService.ts) available for a quick start. This is a good starting point for developing the real service for your application.
 
 At the future I will provide more examples showing real communication with socket.io based chat server.  
 
@@ -126,7 +129,7 @@ This description probably looks complicated :). But believe, me it's really simp
 
 This is very simple example, but it shows how easy is it to implement a chat using **useChat** hook.
 
-For more complex example based on CRA please visit [https://github.com/chatscope/use-chat-example](https://github.com/chatscope/use-chat-example).
+For more complex example based on CRA please visit [https://github.com/wearemothership/use-chat-example](https://github.com/chatscope/use-chat-example).
 Working example app is available here: [https://use-chat.examples.chatscope.io](https://use-chat.examples.chatscope.io)  
 
 File: index.js
@@ -138,7 +141,7 @@ import {
   ChatProvider,
   ExampleChatService,
   AutoDraft
-} from "@chatscope/use-chat";
+} from "@wearemothership/use-chat";
 
 // Storage needs to generate id for messages and groups
 const messageIdGenerator = () => nanoid();
@@ -170,8 +173,8 @@ File Chat.js:
 ```jsx
 import {useState, useMemo } from "react";
 import { MainContainer, Sidebar, ConversationList, Conversation, Avatar, MessageGroup, Message,
-  ChatContainer, ConversationHeader, MessageList, MessageInput} from "@chatscope/chat-ui-kit-react";
-import { useChat, ChatMessage, MessageContentType, MessageDirection, MessageStatus } from "@chatscope/use-chat";
+  ChatContainer, ConversationHeader, MessageList, MessageInput} from "@wearemothership/chat-ui-kit-react";
+import { useChat, ChatMessage, MessageContentType, MessageDirection, MessageStatus } from "@wearemothership/use-chat";
 
 export const Chat = () => {
 
@@ -294,4 +297,4 @@ export const Chat = () => {
 
 ## License
 
-[MIT](https://github.com/chatscope/use-chat/blob/main/LICENSE)
+[MIT](https://github.com/wearemothership/use-chat/blob/main/LICENSE)

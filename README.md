@@ -3,7 +3,7 @@
 [![Actions Status](https://github.com/chatscope/chat-ui-kit-react/workflows/build/badge.svg)](https://github.com/wearemothership/use-chat/actions) [![npm version](https://img.shields.io/npm/v/@wearemothership/use-chat.svg?style=flat)](https://npmjs.com/@wearemothership/use-chat) [![](https://img.shields.io/npm/l/@wearemothership/use-chat?dummy=unused)](https://github.com/wearemothership/use-chat/blob/main/LICENSE) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 > [!NOTE]
-> This has been forked from [https://github.com/wearemothership/use-chat](@chatscope/use-chat)
+> This has been forked from [@chatscope/use-chat](https://github.com/wearemothership/use-chat)
 
 !!! Please do not use version 1.5.0 it has wrong property names !!!
 

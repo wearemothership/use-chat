@@ -22,18 +22,40 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ChatProvider = exports.useChat = void 0;
 const react_1 = __importStar(require("react"));
-const prop_types_1 = __importDefault(require("prop-types"));
 const enums_1 = require("../enums");
 const TypingUser_1 = require("../TypingUser");
 const useThrottledSendTyping_1 = require("./useThrottledSendTyping");
 const useDebounceTyping_1 = require("./useDebounceTyping");
 const useLazyServiceFactoryRef_1 = require("./useLazyServiceFactoryRef");
+// Experimental
+// type ChatContextPropsTyped<S extends IChatService> =
+//   | (ChatState & {
+//       currentMessages: MessageGroup[];
+//       setCurrentUser: (user: User) => void;
+//       addUser: (user: User) => boolean;
+//       removeUser: (userId: UserId) => boolean;
+//       getUser: (userId: UserId) => User | undefined;
+//       setActiveConversation: (conversationId: ConversationId) => void;
+//       sendMessage: (params: SendMessageParams) => void;
+//       addMessage: (
+//         message: ChatMessage<MessageContentType>,
+//         conversationId: ConversationId,
+//         generateId: boolean
+//       ) => void;
+//       updateMessage: (message: ChatMessage<MessageContentType>) => void;
+//       setDraft: (message: string) => void;
+//       sendTyping: (params: SendTypingParams) => void;
+//       addConversation: (conversation: Conversation) => void;
+//       getConversation: (
+//         conversationId: ConversationId
+//       ) => Conversation | undefined;
+//       resetState: () => void;
+//       service: S;
+//     })
+//   | undefined;
 /*const ChatContext = createContext<Partial<ChatContextProps>>({
   conversations: [],
   messages: {},
@@ -54,7 +76,8 @@ const useLazyServiceFactoryRef_1 = require("./useLazyServiceFactoryRef");
   resetState: () => {},
 });*/
 // It can be used to create context in userSpace
-const createChatContext = () => (0, react_1.createContext)(undefined);
+// const createChatContext = <S extends IChatService>() =>
+//   createContext<ChatContextPropsTyped<S>>(undefined);
 const ChatContext = (0, react_1.createContext)(undefined);
 ChatContext.displayName = "ChatContext";
 const useChat = () => {
@@ -94,9 +117,9 @@ const useStorage = (storage, service, setter, { debounceTyping = true, typingDeb
             }
             updateState();
         };
-        const onConnectionStateChanged = () => { };
-        const onUserConnected = () => { };
-        const onUserDisconnected = () => { };
+        const onConnectionStateChanged = () => undefined;
+        const onUserConnected = () => undefined;
+        const onUserDisconnected = () => undefined;
         const onUserPresenceChanged = ({ userId, presence, }) => {
             storage.setPresence(userId, presence);
         };
@@ -129,15 +152,6 @@ const useStorage = (storage, service, setter, { debounceTyping = true, typingDeb
             service.off(enums_1.ChatEventType.UserTyping, onUserTyping);
         };
     }, [storage, service, updateState, debounceTyping, debouncedTyping]);
-};
-const useChatSelector = ({ conversations, activeConversation, messages, currentMessages, currentMessage, }) => {
-    return {
-        conversations,
-        currentMessages,
-        messages,
-        activeConversation,
-        currentMessage,
-    };
 };
 /**
  * Provides methods to operate on chat and properties and collections of chat
@@ -202,12 +216,12 @@ const ChatProvider = ({ serviceFactory, storage, config: { typingThrottleTime = 
             }
         }
         updateState();
-    }, [storage, updateState]);
+    }, [storage, updateState, autoDraft]);
     const getConversation = (0, react_1.useCallback)((conversationId) => storage.getConversation(conversationId)[0], [storage]);
     /**
      * Sends message to active conversation
      */
-    const sendMessage = (0, react_1.useCallback)(({ message, conversationId, senderId, generateId = storage.messageIdGenerator ? true : false, clearMessageInput = true, }) => {
+    const sendMessage = (0, react_1.useCallback)(({ message, conversationId, generateId = storage.messageIdGenerator ? true : false, clearMessageInput = true, }) => {
         const storedMessage = storage.addMessage(message, conversationId, generateId);
         if (clearMessageInput) {
             storage.setCurrentMessage("");
@@ -324,17 +338,4 @@ const ChatProvider = ({ serviceFactory, storage, config: { typingThrottleTime = 
             updateState, service: serviceRef.current, removeMessagesFromConversation }) }, children));
 };
 exports.ChatProvider = ChatProvider;
-exports.ChatProvider.defaultProps = {
-    config: {
-        typingThrottleTime: 250,
-        debounceTyping: true,
-        typingDebounceTime: 900,
-    },
-};
-exports.ChatProvider.propTypes = {
-    children: prop_types_1.default.node,
-    service: prop_types_1.default.object,
-    storage: prop_types_1.default.object,
-    config: prop_types_1.default.object,
-};
 //# sourceMappingURL=ChatProvider.js.map

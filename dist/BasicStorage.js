@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BasicStorage = void 0;
 const MessageGroup_1 = require("./MessageGroup");
 const _1 = require("./");
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 class BasicStorage {
     get groupIdGenerator() {
         return this._groupIdGenerator;
@@ -279,7 +280,9 @@ class BasicStorage {
             }
         }
     }
-    clearState() { }
+    clearState() {
+        return undefined;
+    }
     getState() {
         return {
             currentUser: this.currentUser,

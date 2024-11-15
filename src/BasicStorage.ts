@@ -15,6 +15,7 @@ export interface BasicStorageParams {
   messageIdGenerator?: MessageIdGenerator;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export class BasicStorage<ConversationData = any>
   implements IStorage<ConversationData>
 {
@@ -375,7 +376,9 @@ export class BasicStorage<ConversationData = any>
     }
   }
 
-  clearState(): void {}
+  clearState(): void {
+	return undefined
+  }
 
   getState(): ChatState {
     return {

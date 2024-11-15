@@ -3,7 +3,6 @@ import React, {
   useCallback,
   useContext,
   useEffect,
-  useRef,
   useState,
 } from "react";
 import type { ReactNode } from "react";
@@ -15,7 +14,6 @@ import type {
   UserId,
 } from "../Types";
 import type { IChatService, IStorage } from "../interfaces";
-import PropTypes from "prop-types";
 import { AutoDraft, ChatEventType, MessageContentType } from "../enums";
 import type { Conversation } from "../Conversation";
 import type { User } from "../User";
@@ -72,32 +70,32 @@ type ChatContextProps = ChatState & {
   removeMessagesFromConversation: (conversationId: ConversationId) => void;
 };
 
-// Experimental
-type ChatContextPropsTyped<S extends IChatService> =
-  | (ChatState & {
-      currentMessages: MessageGroup[];
-      setCurrentUser: (user: User) => void;
-      addUser: (user: User) => boolean;
-      removeUser: (userId: UserId) => boolean;
-      getUser: (userId: UserId) => User | undefined;
-      setActiveConversation: (conversationId: ConversationId) => void;
-      sendMessage: (params: SendMessageParams) => void;
-      addMessage: (
-        message: ChatMessage<MessageContentType>,
-        conversationId: ConversationId,
-        generateId: boolean
-      ) => void;
-      updateMessage: (message: ChatMessage<MessageContentType>) => void;
-      setDraft: (message: string) => void;
-      sendTyping: (params: SendTypingParams) => void;
-      addConversation: (conversation: Conversation) => void;
-      getConversation: (
-        conversationId: ConversationId
-      ) => Conversation | undefined;
-      resetState: () => void;
-      service: S;
-    })
-  | undefined;
+// TODO: This is experimental code, either remove or use sometime.
+// type ChatContextPropsTyped<S extends IChatService> =
+//   | (ChatState & {
+//       currentMessages: MessageGroup[];
+//       setCurrentUser: (user: User) => void;
+//       addUser: (user: User) => boolean;
+//       removeUser: (userId: UserId) => boolean;
+//       getUser: (userId: UserId) => User | undefined;
+//       setActiveConversation: (conversationId: ConversationId) => void;
+//       sendMessage: (params: SendMessageParams) => void;
+//       addMessage: (
+//         message: ChatMessage<MessageContentType>,
+//         conversationId: ConversationId,
+//         generateId: boolean
+//       ) => void;
+//       updateMessage: (message: ChatMessage<MessageContentType>) => void;
+//       setDraft: (message: string) => void;
+//       sendTyping: (params: SendTypingParams) => void;
+//       addConversation: (conversation: Conversation) => void;
+//       getConversation: (
+//         conversationId: ConversationId
+//       ) => Conversation | undefined;
+//       resetState: () => void;
+//       service: S;
+//     })
+//   | undefined;
 
 /*const ChatContext = createContext<Partial<ChatContextProps>>({
   conversations: [],
@@ -120,8 +118,8 @@ type ChatContextPropsTyped<S extends IChatService> =
 });*/
 
 // It can be used to create context in userSpace
-const createChatContext = <S extends IChatService>() =>
-  createContext<ChatContextPropsTyped<S>>(undefined);
+// const createChatContext = <S extends IChatService>() =>
+//   createContext<ChatContextPropsTyped<S>>(undefined);
 
 const ChatContext = createContext<ChatContextProps | undefined>(undefined);
 
@@ -189,9 +187,9 @@ const useStorage = (
       updateState();
     };
 
-    const onConnectionStateChanged = () => {};
-    const onUserConnected = () => {};
-    const onUserDisconnected = () => {};
+    const onConnectionStateChanged = () => undefined;
+    const onUserConnected = () => undefined;
+    const onUserDisconnected = () => undefined;
     const onUserPresenceChanged = ({
       userId,
       presence,
@@ -250,21 +248,22 @@ const useStorage = (
   }, [storage, service, updateState, debounceTyping, debouncedTyping]);
 };
 
-const useChatSelector = ({
-  conversations,
-  activeConversation,
-  messages,
-  currentMessages,
-  currentMessage,
-}: ChatState) => {
-  return {
-    conversations,
-    currentMessages,
-    messages,
-    activeConversation,
-    currentMessage,
-  };
-};
+// TODO: This is experimental code, either remove or use sometime.
+// const useChatSelector = ({
+//   conversations,
+//   activeConversation,
+//   messages,
+//   currentMessages,
+//   currentMessage,
+// }: ChatState) => {
+//   return {
+//     conversations,
+//     currentMessages,
+//     messages,
+//     activeConversation,
+//     currentMessage,
+//   };
+// };
 
 export interface ChatProviderConfig {
   // Time for throttling send typing message
@@ -388,7 +387,7 @@ export const ChatProvider = <S extends IChatService>({
 
       updateState();
     },
-    [storage, updateState]
+    [storage, updateState, autoDraft]
   );
 
   const getConversation = useCallback(
@@ -404,7 +403,6 @@ export const ChatProvider = <S extends IChatService>({
     ({
       message,
       conversationId,
-      senderId,
       generateId = storage.messageIdGenerator ? true : false,
       clearMessageInput = true,
     }: SendMessageParams) => {
@@ -585,19 +583,4 @@ export const ChatProvider = <S extends IChatService>({
       {children}
     </ChatContext.Provider>
   );
-};
-
-ChatProvider.defaultProps = {
-  config: {
-    typingThrottleTime: 250,
-    debounceTyping: true,
-    typingDebounceTime: 900,
-  },
-};
-
-ChatProvider.propTypes = {
-  children: PropTypes.node,
-  service: PropTypes.object,
-  storage: PropTypes.object,
-  config: PropTypes.object,
 };

@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
 const Presence_1 = require("./Presence");
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 class User {
     constructor({ id, presence = new Presence_1.Presence({}), firstName = "", lastName = "", username = "", email = "", avatar = "", bio = "", data, }) {
         this.presence = new Presence_1.Presence({});

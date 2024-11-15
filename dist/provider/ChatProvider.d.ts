@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import type { ChatServiceFactory, ChatState, ConversationId, SendTypingServiceParams, UserId } from "../Types";
 import type { IChatService, IStorage } from "../interfaces";
-import PropTypes from "prop-types";
 import { AutoDraft, MessageContentType } from "../enums";
 import type { Conversation } from "../Conversation";
 import type { User } from "../User";
@@ -58,20 +57,5 @@ export interface ChatProviderProps<S extends IChatService> {
  * @param {IStorage} storage
  * @constructor
  */
-export declare const ChatProvider: {
-    <S extends IChatService>({ serviceFactory, storage, config: { typingThrottleTime, debounceTyping, typingDebounceTime, autoDraft, }, children, }: ChatProviderProps<S>): JSX.Element;
-    defaultProps: {
-        config: {
-            typingThrottleTime: number;
-            debounceTyping: boolean;
-            typingDebounceTime: number;
-        };
-    };
-    propTypes: {
-        children: PropTypes.Requireable<PropTypes.ReactNodeLike>;
-        service: PropTypes.Requireable<object>;
-        storage: PropTypes.Requireable<object>;
-        config: PropTypes.Requireable<object>;
-    };
-};
+export declare const ChatProvider: <S extends IChatService>({ serviceFactory, storage, config: { typingThrottleTime, debounceTyping, typingDebounceTime, autoDraft, }, children, }: ChatProviderProps<S>) => JSX.Element;
 export {};

@@ -1,5 +1,5 @@
 import { MessageContentType } from "../enums/MessageContentType";
-export interface MessageContent<MessageContentType> {
+export interface MessageContent<T extends MessageContentType> {
     content: unknown;
 }
 export interface TextContent extends MessageContent<MessageContentType.TextPlain> {

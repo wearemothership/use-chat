@@ -1,6 +1,9 @@
 import { MessageContentType } from "../enums/MessageContentType";
 
-export interface MessageContent<MessageContentType> {
+// TODO: These types don't work well and need improving as the
+// message content 'T' value isn't used and is kinda pointless
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export interface MessageContent<T extends MessageContentType> {
   content: unknown;
 }
 

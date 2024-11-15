@@ -21,6 +21,6 @@ export declare class ExampleChatService implements IChatService {
     sendMessage({ message, conversationId }: SendMessageServiceParams): ChatMessage<MessageContentType>;
     sendTyping({ isTyping, content, conversationId, userId, }: SendTypingServiceParams): void;
     on<T extends ChatEventType, H extends ChatEvent<T>>(evtType: T, evtHandler: ChatEventHandler<T, H>): void;
-    off<T extends ChatEventType, H extends ChatEvent<T>>(evtType: T, eventHandler: ChatEventHandler<T, H>): void;
+    off<T extends ChatEventType>(evtType: T): void;
 }
 export {};

@@ -12,6 +12,6 @@ const useThrottledSendTyping = (charService, time) => (0, react_1.useMemo)(() =>
         charService.sendTyping(params);
     });
     return (params) => subject.next(params);
-}, [time]);
+}, [time, charService]);
 exports.useThrottledSendTyping = useThrottledSendTyping;
 //# sourceMappingURL=useThrottledSendTyping.js.map

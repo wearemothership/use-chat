@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Conversation = void 0;
 const TypingUsersList_1 = require("./TypingUsersList");
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 class Conversation {
     constructor({ id, participants = [], unreadCounter = 0, typingUsers = new TypingUsersList_1.TypingUsersList({ items: [] }), draft = "", description = "", readonly = false, data, }) {
         this.unreadCounter = 0;

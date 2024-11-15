@@ -1,6 +1,7 @@
 import { UserId } from "./Types";
 import { Presence } from "./Presence";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type UserParams<UserData = any> = {
   readonly id: string;
   firstName?: string;
@@ -13,6 +14,7 @@ export type UserParams<UserData = any> = {
   data?: UserData;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export class User<UserData = any> {
   readonly id: UserId;
   presence: Presence = new Presence({});

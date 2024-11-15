@@ -13,6 +13,7 @@ export interface ConversationParams<ConversationData> {
   readonly data?: ConversationData;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export class Conversation<ConversationData = any> {
   readonly id: ConversationId;
   unreadCounter = 0;

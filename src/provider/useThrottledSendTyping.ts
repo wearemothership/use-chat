@@ -19,4 +19,4 @@ export const useThrottledSendTyping = (
       });
 
     return (params: SendTypingServiceParams): void => subject.next(params);
-  }, [time]);
+  }, [time, charService]);

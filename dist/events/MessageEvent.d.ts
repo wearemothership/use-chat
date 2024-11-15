@@ -2,8 +2,8 @@ import { ChatEventType, MessageContentType } from "../enums";
 import { ChatEvent } from "./ChatEvent";
 import { ConversationId } from "../Types";
 import { ChatMessage } from "../ChatMessage";
-export type MessageEventParams<T extends MessageContentType> = {
-    message: ChatMessage<MessageContentType>;
+export type MessageEventParams<T extends MessageContentType = MessageContentType> = {
+    message: ChatMessage<T>;
     conversationId: ConversationId;
 };
 export declare class MessageEvent implements ChatEvent<ChatEventType.Message> {

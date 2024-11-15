@@ -10,6 +10,7 @@ import {
 } from "../";
 import { User } from "../User";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface IStorage<ConversationData = any, UserData = any> {
   readonly groupIdGenerator: GroupIdGenerator;
 

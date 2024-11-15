@@ -39,6 +39,7 @@ type EventHandlers = {
     ChatEventType.UserTyping,
     ChatEvent<ChatEventType.UserTyping>
   >;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 };
 
@@ -47,12 +48,12 @@ export class ExampleChatService implements IChatService {
   updateState: UpdateState;
 
   eventHandlers: EventHandlers = {
-    onMessage: () => {},
-    onConnectionStateChanged: () => {},
-    onUserConnected: () => {},
-    onUserDisconnected: () => {},
-    onUserPresenceChanged: () => {},
-    onUserTyping: () => {},
+    onMessage: () => undefined,
+    onConnectionStateChanged: () => undefined,
+    onUserConnected: () => undefined,
+    onUserDisconnected: () => undefined,
+    onUserPresenceChanged: () => undefined,
+    onUserTyping: () => undefined,
   };
 
   constructor(storage: IStorage, update: UpdateState) {
@@ -179,13 +180,12 @@ export class ExampleChatService implements IChatService {
 
   // The ChatProvider can unregister the callback.
   // In this case remove it from your service to keep it clean.
-  off<T extends ChatEventType, H extends ChatEvent<T>>(
-    evtType: T,
-    eventHandler: ChatEventHandler<T, H>
+  off<T extends ChatEventType>(
+    evtType: T
   ) {
     const key = `on${evtType.charAt(0).toUpperCase()}${evtType.substring(1)}`;
     if (key in this.eventHandlers) {
-      this.eventHandlers[key] = () => {};
+      this.eventHandlers[key] = () => undefined;
     }
   }
 }

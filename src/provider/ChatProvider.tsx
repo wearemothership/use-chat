@@ -70,7 +70,7 @@ type ChatContextProps = ChatState & {
   removeMessagesFromConversation: (conversationId: ConversationId) => void;
 };
 
-// Experimental
+// TODO: This is experimental code, either remove or use sometime.
 // type ChatContextPropsTyped<S extends IChatService> =
 //   | (ChatState & {
 //       currentMessages: MessageGroup[];
@@ -248,6 +248,7 @@ const useStorage = (
   }, [storage, service, updateState, debounceTyping, debouncedTyping]);
 };
 
+// TODO: This is experimental code, either remove or use sometime.
 // const useChatSelector = ({
 //   conversations,
 //   activeConversation,

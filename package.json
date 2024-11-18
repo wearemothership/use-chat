@@ -52,15 +52,16 @@
     "husky": ">=9",
     "lint-staged": ">=15",
     "prettier": "3.3.3",
+    "rimraf": "^6.0.1",
     "typescript": "5.6.3"
   },
   "peerDependencies": {
     "react": "^18"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "rimraf dist && tsc",
     "watch": "tsc --watch",
-    "predeploy": "npm run build"
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "rxjs": "7.8.1"
